@@ -1,0 +1,62 @@
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) FIRST 2008. All Rights Reserved.                             */
+/* Open Source Software - may be modified and shared by FRC teams. The code   */
+/* must be accompanied by the FIRST BSD license file in the root directory of */
+/* the project.                                                               */
+/*----------------------------------------------------------------------------*/
+
+package edu.wpi.first.wpilibj.templates;
+import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.DriverStationLCD;
+import edu.wpi.first.wpilibj.RobotBase;
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.communication.FRCControl;
+
+import edu.wpi.first.wpilibj.SimpleRobot;
+
+/**
+ * The VM is configured to automatically run this class, and to call the
+ * functions corresponding to each mode, as described in the SimpleRobot
+ * documentation. If you change the name of this class or the package after
+ * creating this project, you must also update the manifest file in the resource
+ * directory.
+ */
+public class RobotTemplate extends SimpleRobot {
+    // Set variables for changing stuff
+        // 8 Motors //
+    
+    Jaguar driveMotor1;
+    Jaguar driveMotor2;
+    Jaguar throwing_motor_1;
+    Jaguar throwing_motor_2;
+    Jaguar arm_motor_right;
+    Jaguar arm_motor_left;
+    Relay belt_motor_1;
+    Relay belt_motor_2;
+    public void autonomous() {
+        
+    }
+
+    /**
+     * This function is called once each time the robot enters operator control.
+     */
+    public void operatorControl() {
+        driveMotor1 = (1);     /* drive motor 1 - left */
+        driveMotor2 = new Jaguar(2);     /* drive motor 2 - right */
+        throwing_motor_1 = new Jaguar(3); //Ball throwing motors
+        throwing_motor_2 = new Jaguar(4);
+        arm_motor_right = new Jaguar(5); //Moves gather arms up and down
+        arm_motor_left = new Jaguar(6);
+        belt_motor_1 = new Relay(1); //Gathers ball into bucket
+        belt_motor_2 = new Relay(2);
+        joy1 = new Joystick(1);
+//  
+    }
+    
+    /**
+     * This function is called once each time the robot enters test mode.
+     */
+    public void test() {
+    
+    }
+}
